@@ -1,0 +1,109 @@
+UAE Property Guide:
+ The website for show the details of uae property. Help us to guide.
+Color Codes:
+- Primary:
+. HEX #0B0D3D
+. HEX #2C5DA9
+. HEX #C7DCF9
+- Secondary:
+. HEX #000000
+. HEX #3E3F3E
+. HEX #B3B3B3
+
+Fonts:
+- Poppins Medium only
+
+Total Screen:
+- Header
+- Footer
+- Landing Page (contain only search bar and counters and contain search result also that display in table format )
+- Login 
+- Sign Up
+- Contact us 
+- Blog 
+- [blog] (dynamic page for individual blog reading)
+- Terms and conditions 
+- privacy 
+
+Attributes:
+- Display in Header:
+	. Home
+	. Contact us 
+	. Blog 
+links and 
+	. login 
+	. Signup 
+links if users is not authenticated and if user authenticated so display:
+	. user's name 
+and 
+	. logout button
+
+- Display in Footer 
+	. text (in 2 paragraph)
+and 
+	. Terms and Conditions
+	. Privacy
+links
+
+- Display in landing page: 
+	- Search Bar attributes:
+		. City dropdown
+		. location dropdown
+		. Developer dropdown
+		. Unit Type dropdown
+		. Bedrooms dropdown
+		. Handover Year dropdown
+		. Starting Price in AED (with contain 2 dropdown min range and max range)
+		. and Search Button
+	- if user select something from the search bar and display result in table that also have these components
+		. City 
+		. location 
+		. Developer 
+		. Unit Type 
+		. Bedrooms 
+		. Handover Year 
+		. Price in AED
+		. and Search Button
+	When click on Result so open the Model that contain these attribute:
+		. Full Name
+		. Email
+		. Phone
+		. Message
+		. and Send Inquiry Button
+	- Then display in landing page couters:
+		. Total Project
+		. Verified Developers
+		. Ready Projects
+ 		. Unique Locations
+
+- Display in Login Screen:
+	. Email and password
+	. Login with Google
+	. Login with Facebook
+
+- Display in Sign Up Screen:
+	. Sign Up with Email 
+		. Name, Email, Password, Confirm Password, Phone Number Optional
+	. Sign Up with Google 
+	. Sign Up with Facebook
+I am a 
+	. Customer
+or 
+	. Broker 
+	
+- Display Contact Us:
+	. these email: admin@uaepropertyguide.com
+	. I am Customer or Broker (radio button)
+	. Full name 
+	. Email
+	. Phone Number
+	. Message
+	
+- Display in Blog Screen:
+	. Display all blogs Grid 
+- Display in [blog] (dynamic page for individual blog reading) Screen:
+	. Blog heading, paragraph, image
+- Display in Terms and Conditions Screen:
+	. Contain Terms and Conditions (Text)
+- Display in Privacy Screen: 
+	 . Contain Privacy Screen.
