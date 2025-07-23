@@ -11,7 +11,7 @@ const getBlogPost = (slug: string) => {
   const posts: Record<string, any> = {
     "dubai-property-market-2024": {
       title: "Dubai Property Market Trends in 2024",
-      image: "/download.jpeg",
+      image: "/bg1.jpg",
       date: "2024-03-15",
       readTime: "5 min read",
       category: "Market Analysis",
@@ -39,7 +39,7 @@ const getBlogPost = (slug: string) => {
     },
     "abu-dhabi-luxury-developments": {
       title: "Luxury Developments in Abu Dhabi",
-      image: "/placeholder.svg?height=400&width=800",
+      image: "/bg2.jpg",
       date: "2024-03-12",
       readTime: "7 min read",
       category: "Luxury Properties",

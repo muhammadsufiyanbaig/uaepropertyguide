@@ -20,7 +20,7 @@ export default function Header() {
     }
 
     return (
-        <header className="sticky top-0 z-50 backdrop-blur-lg bg-white/80 border-b border-white/20 shadow-lg shadow-blue-500/5">
+        <header className="sticky top-0 z-50 backdrop-blur-lg bg-white/40 border-b border-white/20 shadow-lg shadow-blue-500/5">
             <div className="container mx-auto px-4">
                 <div className="flex justify-between items-center py-3">
                     {/* Enhanced Logo Section */}
@@ -52,17 +52,17 @@ export default function Header() {
                     </Link>
 
                     {/* Enhanced Desktop Navigation */}
-                    <nav className="hidden md:flex items-center space-x-2 animate-fade-in-delay-1">
+                    <nav className="hidden md:flex items-center space-x-10 animate-fade-in-delay-1">
                         <Link href="/" className="nav-link group relative overflow-hidden">
-                            <span className="relative z-10">Home</span>
+                            <span className="relative text-[#2C5DA9]  z-10">Home</span>
                             <div className="absolute inset-0 bg-gradient-to-r from-[#2C5DA9]/10 to-[#1e3a8a]/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-xl"></div>
                         </Link>
                         <Link href="/contact" className="nav-link group relative overflow-hidden">
-                            <span className="relative z-10">Contact Us</span>
+                            <span className="relative text-[#2C5DA9] z-10">Contact Us</span>
                             <div className="absolute inset-0 bg-gradient-to-r from-[#2C5DA9]/10 to-[#1e3a8a]/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-xl"></div>
                         </Link>
                         <Link href="/blog" className="nav-link group relative overflow-hidden">
-                            <span className="relative z-10">Blog</span>
+                            <span className="relative text-[#2C5DA9] z-10">Blog</span>
                             <div className="absolute inset-0 bg-gradient-to-r from-[#2C5DA9]/10 to-[#1e3a8a]/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-xl"></div>
                         </Link>
 

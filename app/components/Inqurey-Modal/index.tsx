@@ -44,7 +44,7 @@ export default function InquiryModal({ isOpen, onClose, property }: InquiryModal
 
     return (
         <Dialog open={isOpen} onOpenChange={onClose}>
-            <DialogContent className="sm:max-w-[450px] max-h-[85vh] overflow-y-auto glass-strong rounded-3xl border-0 shadow-2xl p-0">
+            <DialogContent className="sm:max-w-[450px] max-h-[85vh] overflow-y-auto glass-strong bg-white/30 rounded-3xl border-0 shadow-2xl p-0">
                 <div className="relative">
                     {/* Header with gradient background */}
                     <div className="bg-gradient-to-r from-[#2C5DA9] to-[#0B0D3D] rounded-t-3xl p-6 text-white">
@@ -78,7 +78,7 @@ export default function InquiryModal({ isOpen, onClose, property }: InquiryModal
                                         value={formData.fullName}
                                         onChange={handleChange}
                                         required
-                                        className="h-9 border-gray-200 focus:border-blue-400 focus:ring-blue-400 rounded-lg text-sm"
+                                        className="h-9 border-gray-700 focus:border-blue-400 focus:ring-blue-400 rounded-lg text-sm"
                                         placeholder="Enter your name"
                                     />
                                 </div>
@@ -94,7 +94,7 @@ export default function InquiryModal({ isOpen, onClose, property }: InquiryModal
                                         value={formData.phone}
                                         onChange={handleChange}
                                         required
-                                        className="h-9 border-gray-200 focus:border-blue-400 focus:ring-blue-400 rounded-lg text-sm"
+                                        className="h-9 border-gray-700 focus:border-blue-400 focus:ring-blue-400 rounded-lg text-sm"
                                         placeholder="Your phone"
                                     />
                                 </div>
@@ -111,7 +111,7 @@ export default function InquiryModal({ isOpen, onClose, property }: InquiryModal
                                     value={formData.email}
                                     onChange={handleChange}
                                     required
-                                    className="h-9 border-gray-200 focus:border-blue-400 focus:ring-blue-400 rounded-lg text-sm"
+                                    className="h-9 border-gray-700 focus:border-blue-400 focus:ring-blue-400 rounded-lg text-sm"
                                     placeholder="your.email@example.com"
                                 />
                             </div>
@@ -126,7 +126,7 @@ export default function InquiryModal({ isOpen, onClose, property }: InquiryModal
                                     value={formData.message}
                                     onChange={handleChange}
                                     placeholder="Tell us more about your requirements..."
-                                    className="border-gray-200 focus:border-blue-400 focus:ring-blue-400 rounded-lg text-sm resize-none"
+                                    className="border-gray-700 focus:border-blue-400 focus:ring-blue-400 rounded-lg text-sm resize-none"
                                     rows={2}
                                 />
                             </div>
@@ -137,7 +137,7 @@ export default function InquiryModal({ isOpen, onClose, property }: InquiryModal
                                     type="button" 
                                     onClick={onClose} 
                                     variant="outline"
-                                    className="flex-1 h-10 rounded-lg border-gray-300 text-gray-700 hover:bg-gray-50"
+                                    className="flex-1 h-10 rounded-lg border-[#2C5DA9] border-2 bg-transparent text-[#0B0D3D] font-semibold hover:bg-transparent hover:border-[#0B0D3D] transition-colors shadow-sm hover:shadow-md"
                                 >
                                     Cancel
                                 </Button>

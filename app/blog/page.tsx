@@ -1,3 +1,10 @@
+'use client'
+
+import bg1 from "@/public/bg1.jpg";
+import bg2 from "@/public/bg2.jpg";
+import bg3 from "@/public/bg3.jpg";
+import bg4 from "@/public/bg4.jpg";
+import { useState, useEffect } from 'react'
 import Link from "next/link"
 import Image from "next/image"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -11,7 +18,7 @@ const blogPosts = [
         slug: "dubai-property-market-2024",
         title: "Dubai Property Market Trends in 2024",
         excerpt: "Discover the latest trends and investment opportunities in Dubai's dynamic real estate market this year.",
-        image: "/download.jpeg",
+        image: "/bg1.jpg",
         date: "2024-03-15",
         readTime: "5 min read",
         category: "Market Analysis",
@@ -21,7 +28,7 @@ const blogPosts = [
         slug: "abu-dhabi-luxury-developments",
         title: "Luxury Developments in Abu Dhabi",
         excerpt: "Explore the most exclusive luxury property developments coming to Abu Dhabi in the next few years.",
-        image: "/download(1).jpeg",
+        image: "/bg2.jpg",
         date: "2024-03-12",
         readTime: "7 min read",
         category: "Luxury Properties",
@@ -32,7 +39,7 @@ const blogPosts = [
         title: "Complete Guide to Property Investment in UAE",
         excerpt:
             "Everything you need to know about investing in UAE real estate, from legal requirements to market insights.",
-        image: "/download(2).jpeg",
+        image: "/bg3.jpg",
         date: "2024-03-10",
         readTime: "10 min read",
         category: "Investment Guide",
@@ -42,7 +49,7 @@ const blogPosts = [
         slug: "sharjah-affordable-housing",
         title: "Affordable Housing Options in Sharjah",
         excerpt: "Discover budget-friendly housing options in Sharjah that offer great value for money.",
-        image: "/download(3).jpeg",
+        image: "/bg1.jpg",
         date: "2024-03-08",
         readTime: "6 min read",
         category: "Affordable Housing",
@@ -53,7 +60,7 @@ const blogPosts = [
         title: "UAE Property Laws: What Changed in 2024",
         excerpt:
             "Stay updated with the latest changes in UAE property laws and regulations that affect buyers and investors.",
-        image: "/download(1).jpeg",
+        image: "/bg2.jpg",
         date: "2024-03-05",
         readTime: "8 min read",
         category: "Legal Updates",
@@ -63,7 +70,7 @@ const blogPosts = [
         slug: "off-plan-properties-benefits",
         title: "Benefits of Buying Off-Plan Properties in UAE",
         excerpt: "Learn about the advantages and considerations when purchasing off-plan properties in the UAE.",
-        image: "/download(2).jpeg",
+        image: "/bg3.jpg",
         date: "2024-03-03",
         readTime: "5 min read",
         category: "Buying Guide",
@@ -71,6 +78,17 @@ const blogPosts = [
 ]
 
 export default function BlogPage() {
+    const [currentImageIndex, setCurrentImageIndex] = useState(0)
+    const backgroundImages = [bg1, bg2, bg3, bg4]
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentImageIndex((prevIndex) => (prevIndex + 1) % backgroundImages.length)
+        }, 5000)
+
+        return () => clearInterval(interval)
+    }, [backgroundImages.length])
+
     return (
         <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 py-16">
             <div className="container mx-auto px-4">
@@ -85,74 +103,89 @@ export default function BlogPage() {
 
                     {/* Main content container */}
                     <div className="relative">
-                        {/* Glassmorphism container */}
+                        {/* Glassmorphism container with rotating background */}
                         <div className="relative bg-white/20 backdrop-blur-xl rounded-3xl py-16 px-8 shadow-2xl border border-white/30 overflow-hidden">
+                            {/* Dynamic Background Images - positioned behind content */}
+                            <div className="absolute inset-0 -z-10 overflow-hidden rounded-3xl">
+                                {backgroundImages.map((bg, index) => (
+                                    <Image
+                                        key={index}
+                                        src={bg}
+                                        alt={`Background ${index + 1}`}
+                                        fill
+                                        className={`object-cover transition-opacity duration-1000 ${
+                                            index === currentImageIndex ? 'opacity-30' : 'opacity-0'
+                                        }`}
+                                    />
+                                ))}
+                                {/* Dark overlay for text readability */}
+                                <div className="absolute inset-0 bg-black/40"></div>
+                            </div>
+
                             {/* Decorative geometric shapes */}
                             <div className="absolute top-4 right-4 w-16 h-16 border-2 border-[#2C5DA9]/20 rounded-lg rotate-12 animate-spin-slow"></div>
                             <div className="absolute bottom-4 left-4 w-12 h-12 bg-gradient-to-br from-[#0B0D3D]/10 to-[#2C5DA9]/10 rounded-full animate-bounce delay-300"></div>
                             <div className="absolute top-1/2 right-8 w-8 h-8 bg-[#2C5DA9]/20 rounded-full animate-pulse delay-700"></div>
-                            
-                            {/* Content */}
+
+                            {/* Content - positioned above background */}
                             <div className="relative z-10">
                                 {/* Badge */}
                                 <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-[#0B0D3D] to-[#2C5DA9] text-white text-sm font-semibold mb-6 shadow-lg animate-fade-in">
                                     <span className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></span>
                                     Latest Property Insights
                                 </div>
-                                
+
                                 {/* Main heading */}
                                 <h1 className="text-6xl md:text-7xl font-black mb-6 leading-tight">
-                                    <span className="bg-gradient-to-r from-[#0B0D3D] via-[#2C5DA9] to-[#0B0D3D] bg-clip-text text-transparent bg-300% animate-gradient-x">
+                                    <span className="bg-gradient-to-r from-[#0B0D3D] via-[#2C5DA9] to-[#0B0D3D] bg-clip-text text-transparent bg-300% animate-gradient-x drop-shadow-lg">
                                         Property
                                     </span>
                                     <br />
-                                    <span className="bg-gradient-to-r from-[#2C5DA9] via-[#0B0D3D] to-[#0B0D3D] bg-clip-text text-transparent bg-300% animate-gradient-x delay-500">
+                                    <span className="bg-gradient-to-r from-[#2C5DA9] via-[#0B0D3D] to-[#2C5DA9] bg-clip-text text-transparent bg-300% animate-gradient-x delay-500 drop-shadow-lg">
                                         Insights & News
                                     </span>
                                 </h1>
-                                
+
                                 {/* Subtitle */}
-                                <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed mb-8 font-medium">
-                                    Stay informed with the latest news, trends, and insights from the 
+                                <p className="text-xl md:text-2xl text-[#0B0D3D] max-w-4xl mx-auto leading-relaxed mb-8 font-medium drop-shadow-md">
+                                    Stay informed with the latest news, trends, and insights from the
                                     <span className="text-[#2C5DA9] font-semibold"> UAE property market</span>
                                 </p>
-                                
+
                                 {/* Statistics or highlights */}
                                 <div className="flex flex-wrap justify-center gap-8 mt-12">
                                     <div className="text-center">
-                                        <div className="text-3xl font-bold text-[#0B0D3D] mb-1">500+</div>
-                                        <div className="text-sm text-gray-600 font-medium">Articles Published</div>
+                                        <div className="text-3xl font-bold text-[#0B0D3D] mb-1 drop-shadow-lg">500+</div>
+                                        <div className="text-sm text-gray-600 font-medium drop-shadow-md">Articles Published</div>
                                     </div>
-                                    <div className="w-px h-16 bg-gradient-to-b from-transparent via-gray-300 to-transparent"></div>
+                                    <div className="w-px h-16 bg-gradient-to-b from-transparent via-[#2C5DA9] to-transparent"></div>
                                     <div className="text-center">
-                                        <div className="text-3xl font-bold text-[#2C5DA9] mb-1">1M+</div>
-                                        <div className="text-sm text-gray-600 font-medium">Readers Monthly</div>
+                                        <div className="text-3xl font-bold text-[#2C5DA9] mb-1 drop-shadow-lg">1M+</div>
+                                        <div className="text-sm text-gray-600 font-medium drop-shadow-md">Readers Monthly</div>
                                     </div>
-                                    <div className="w-px h-16 bg-gradient-to-b from-transparent via-gray-300 to-transparent"></div>
+                                    <div className="w-px h-16 bg-gradient-to-b from-transparent via-[#2C5DA9] to-transparent"></div>
                                     <div className="text-center">
-                                        <div className="text-3xl font-bold text-[#0B0D3D] mb-1">24/7</div>
-                                        <div className="text-sm text-gray-600 font-medium">Market Updates</div>
+                                        <div className="text-3xl font-bold text-[#0B0D3D] mb-1 drop-shadow-lg">24/7</div>
+                                        <div className="text-sm text-gray-600 font-medium drop-shadow-md">Market Updates</div>
                                     </div>
                                 </div>
                             </div>
-                            
+
                             {/* Bottom gradient border */}
-                            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#0B0D3D] via-[#2C5DA9] to-[]"></div>
+                            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#0B0D3D] via-[#2C5DA9] to-[#0B0D3D]"></div>
                         </div>
-                        
+
                         {/* Floating elements */}
                         <div className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-br from-[#2C5DA9] to-[#0B0D3D] rounded-full shadow-lg animate-bounce delay-1000"></div>
                         <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-gradient-to-br from-[#0B0D3D] to-[#2C5DA9] rounded-full shadow-lg animate-pulse delay-1500"></div>
                     </div>
                 </div>
 
-               
-
                 {/* Blog Cards Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {blogPosts.map((post, index) => (
-                        <Card 
-                            key={post.id} 
+                        <Card
+                            key={post.id}
                             className="group hover:shadow-2xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm hover:bg-white/90 hover:-translate-y-2 overflow-hidden"
                             style={{
                                 animationDelay: `${index * 150}ms`
@@ -168,10 +201,10 @@ export default function BlogPage() {
                                 />
                                 {/* Gradient Overlay */}
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#0B0D3D]/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                
+
                                 {/* Category Badge */}
-                                <Badge className="absolute top-4 left-4 px-3 py-1 text-xs font-semibold text-white border-0 shadow-lg" 
-                                             style={{ backgroundColor: '#2C5DA9' }}>
+                                <Badge className="absolute top-4 left-4 px-3 py-1 text-xs font-semibold text-white border-0 shadow-lg"
+                                    style={{ backgroundColor: '#2C5DA9' }}>
                                     {post.category}
                                 </Badge>
                             </div>
@@ -196,11 +229,11 @@ export default function BlogPage() {
                                 <CardDescription className="text-gray-600 mb-6 leading-relaxed line-clamp-3">
                                     {post.excerpt}
                                 </CardDescription>
-                                
+
                                 <Link
                                     href={`/blog/${post.slug}`}
                                     className="inline-flex items-center px-4 py-2 rounded-lg font-semibold text-white transition-all duration-300 group-hover:shadow-lg"
-                                    style={{ 
+                                    style={{
                                         background: `linear-gradient(135deg, #0B0D3D 0%, #2C5DA9 100%)`,
                                     }}
                                 >
