@@ -2,9 +2,9 @@ UAE Property Guide:
  The website for show the details of uae property. Help us to guide.
 Color Codes:
 - Primary:
-. HEX #0B0D3D
-. HEX #2C5DA9
-. HEX #C7DCF9
+HEX #430F00
+HEX #863300
+HEX #DE6300
 - Secondary:
 . HEX #000000
 . HEX #3E3F3E
@@ -107,3 +107,5 @@ or
 	. Contain Terms and Conditions (Text)
 - Display in Privacy Screen: 
 	 . Contain Privacy Screen.
+	 
+	 

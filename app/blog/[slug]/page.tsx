@@ -11,7 +11,7 @@ const getBlogPost = (slug: string) => {
   const posts: Record<string, any> = {
     "dubai-property-market-2024": {
       title: "Dubai Property Market Trends in 2024",
-      image: "/download.jpeg",
+      image: "/bg1.jpg",
       date: "2024-03-15",
       readTime: "5 min read",
       category: "Market Analysis",
@@ -39,7 +39,7 @@ const getBlogPost = (slug: string) => {
     },
     "abu-dhabi-luxury-developments": {
       title: "Luxury Developments in Abu Dhabi",
-      image: "/placeholder.svg?height=400&width=800",
+      image: "/bg2.jpg",
       date: "2024-03-12",
       readTime: "7 min read",
       category: "Luxury Properties",
@@ -76,18 +76,18 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   if (!post) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-[#C7DCF9] via-white to-[#C7DCF9] py-16">
+      <div className="min-h-screen bg-transparent py-16 backdrop-blur-sm">
         <div className="container mx-auto px-4 text-center">
-          <div className="max-w-md mx-auto bg-white rounded-2xl shadow-xl p-8 border border-[#C7DCF9]/50">
-            <div className="w-16 h-16 bg-gradient-to-r from-[#2C5DA9] to-[#0B0D3D] rounded-full mx-auto mb-6 flex items-center justify-center">
+          <div className="max-w-md mx-auto bg-white/10 backdrop-blur-md rounded-2xl shadow-2xl p-8 border border-white/20">
+            <div className="w-16 h-16 bg-gradient-to-r from-[#430F00] to-[#DE6300] rounded-full mx-auto mb-6 flex items-center justify-center shadow-lg">
               <span className="text-white text-2xl">?</span>
             </div>
-            <h1 className="text-3xl font-bold text-[#0B0D3D] mb-4">Post Not Found</h1>
-            <p className="text-[#2C5DA9] mb-8 leading-relaxed">
+            <h1 className="text-3xl font-bold text-gray-900 mb-4">Post Not Found</h1>
+            <p className="text-gray-800 mb-8 leading-relaxed">
               The blog post you're looking for doesn't exist or may have been moved.
             </p>
             <Link href="/blog">
-              <Button className="bg-gradient-to-r from-[#2C5DA9] to-[#0B0D3D] hover:from-[#0B0D3D] hover:to-[#2C5DA9] text-white px-8 py-3 rounded-xl shadow-lg transition-all duration-300 transform hover:scale-105">
+              <Button className="bg-gradient-to-r from-[#430F00] via-[#863300] to-[#DE6300] hover:from-[#DE6300] hover:via-[#863300] hover:to-[#430F00] text-white px-8 py-3 rounded-xl shadow-lg transition-all duration-300 transform hover:scale-105 backdrop-blur-sm">
                 Back to Blog
               </Button>
             </Link>
@@ -98,11 +98,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#C7DCF9] via-white to-[#C7DCF9]">
+    <div className="min-h-screen bg-transparent backdrop-blur-sm">
       {/* Hero Section with Background Pattern */}
       <div className="relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-[#2C5DA9] to-[#0B0D3D] transform -skew-y-1"></div>
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-[#430F00] via-[#863300] to-[#DE6300] transform -skew-y-1"></div>
         </div>
         
         <div className="relative z-10 container mx-auto px-4 pt-12 pb-8">
@@ -110,16 +110,16 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             {/* Enhanced Back Button */}
             <Link
               href="/blog"
-              className="inline-flex items-center text-[#2C5DA9] hover:text-[#0B0D3D] transition-all duration-300 mb-8 group bg-white/80 backdrop-blur-sm px-4 py-2 rounded-xl shadow-lg hover:shadow-xl"
+              className="inline-flex items-center text-gray-900 hover:text-[#863300] transition-all duration-300 mb-8 group bg-white/20 backdrop-blur-md px-4 py-2 rounded-xl shadow-lg hover:shadow-xl border border-white/30"
             >
               <ArrowLeft className="h-5 w-5 mr-2 transition-transform group-hover:-translate-x-1" />
               <span className="font-medium">Back to Blog</span>
             </Link>
 
             {/* Enhanced Article Header */}
-            <Card className="mb-8 shadow-2xl border-0 bg-white/95 backdrop-blur-sm overflow-hidden">
+            <Card className="mb-8 shadow-2xl  bg-white/10 backdrop-blur-md overflow-hidden border border-white/20">
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-[#0B0D3D]/20 to-[#2C5DA9]/20 z-10"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#430F00]/20 via-[#863300]/20 to-[#DE6300]/20 z-10"></div>
                 <Image
                   src={post.image || "/placeholder.svg"}
                   alt={post.title}
@@ -127,18 +127,18 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   height={500}
                   className="w-full h-72 md:h-96 object-cover"
                 />
-                <Badge className="absolute top-6 left-6 z-20 bg-gradient-to-r from-[#2C5DA9] to-[#0B0D3D] text-white px-4 py-2 text-sm font-semibold rounded-full shadow-lg">
+                <Badge className="absolute top-6 left-6 z-20 bg-gradient-to-r from-[#430F00] via-[#863300] to-[#DE6300] text-white px-4 py-2 text-sm font-semibold rounded-full shadow-lg backdrop-blur-sm">
                   {post.category}
                 </Badge>
                 
                 {/* Overlay Content */}
-                <div className="absolute bottom-0 left-0 right-0 z-20 bg-gradient-to-t from-[#0B0D3D]/90 via-[#0B0D3D]/50 to-transparent p-8">
+                <div className="absolute bottom-0 left-0 right-0 z-20 bg-gradient-to-t from-[#430F00]/90 via-[#863300]/50 to-transparent p-8 backdrop-blur-sm">
                   <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
                     {post.title}
                   </h1>
                   
                   <div className="flex flex-wrap items-center gap-6 text-white/90">
-                    <div className="flex items-center bg-white/10 backdrop-blur-sm px-3 py-2 rounded-lg">
+                    <div className="flex items-center bg-white/20 backdrop-blur-md px-3 py-2 rounded-lg border border-white/30">
                       <Calendar className="h-4 w-4 mr-2" />
                       <span className="text-sm font-medium">
                         {new Date(post.date).toLocaleDateString('en-US', { 
@@ -148,11 +148,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                         })}
                       </span>
                     </div>
-                    <div className="flex items-center bg-white/10 backdrop-blur-sm px-3 py-2 rounded-lg">
+                    <div className="flex items-center bg-white/20 backdrop-blur-md px-3 py-2 rounded-lg border border-white/30">
                       <Clock className="h-4 w-4 mr-2" />
                       <span className="text-sm font-medium">{post.readTime}</span>
                     </div>
-                    <div className="flex items-center bg-white/10 backdrop-blur-sm px-3 py-2 rounded-lg">
+                    <div className="flex items-center bg-white/20 backdrop-blur-md px-3 py-2 rounded-lg border border-white/30">
                       <User className="h-4 w-4 mr-2" />
                       <span className="text-sm font-medium">UAE Property Guide Team</span>
                     </div>
@@ -170,29 +170,26 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           {/* Action Bar */}
           <div className="flex justify-between items-center mb-8">
             <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-gradient-to-r from-[#2C5DA9] to-[#0B0D3D] rounded-full flex items-center justify-center">
+              <div className="w-12 h-12 bg-gradient-to-r from-[#430F00] via-[#863300] to-[#DE6300] rounded-full flex items-center justify-center shadow-lg">
                 <User className="h-6 w-6 text-white" />
               </div>
               <div>
-                <p className="font-semibold text-[#0B0D3D]">UAE Property Guide Team</p>
-                <p className="text-sm text-[#2C5DA9]">Real Estate Experts</p>
+                <p className="font-semibold text-gray-900">UAE Property Guide Team</p>
+                <p className="text-sm text-gray-700">Real Estate Experts</p>
               </div>
             </div>
             
-            <Button
-              variant="outline"
-              className="border-2 border-[#2C5DA9] text-[#2C5DA9] hover:bg-[#2C5DA9] hover:text-white bg-white transition-all duration-300 px-6 py-3 rounded-xl shadow-lg hover:shadow-xl"
-            >
+            <Button className="bg-white/20 backdrop-blur-md border-2 border-white/30 text-gray-900 hover:bg-gradient-to-r hover:from-[#430F00] hover:via-[#863300] hover:to-[#DE6300] hover:text-white transition-all duration-300 px-6 py-3 rounded-xl shadow-lg hover:shadow-xl">
               <Share2 className="h-4 w-4 mr-2" />
               Share Article
             </Button>
           </div>
 
           {/* Enhanced Article Content */}
-          <Card className="shadow-2xl border-0 bg-white/95 backdrop-blur-sm">
+          <Card className="shadow-2xl  bg-white/10 backdrop-blur-md border border-white/20">
             <CardContent className="p-8 md:p-12">
               <div
-                className="prose prose-xl max-w-none text-[#0B0D3D] leading-relaxed"
+                className="prose prose-xl max-w-none text-gray-900 leading-relaxed"
                 dangerouslySetInnerHTML={{ __html: post.content }}
                 style={{
                   lineHeight: "1.8",
@@ -201,16 +198,16 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               />
               
               {/* Reading Progress Indicator */}
-              <div className="mt-12 pt-8 border-t border-[#C7DCF9]">
+              <div className="mt-12 pt-8 border-t border-white/30">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-4">
-                    <div className="w-2 h-2 bg-[#2C5DA9] rounded-full"></div>
-                    <span className="text-[#2C5DA9] font-medium">End of Article</span>
+                    <div className="w-2 h-2 bg-gradient-to-r from-[#430F00] to-[#DE6300] rounded-full"></div>
+                    <span className="text-gray-900 font-medium">End of Article</span>
                   </div>
                   <div className="flex space-x-3">
-                    <div className="w-3 h-3 bg-[#2C5DA9] rounded-full"></div>
-                    <div className="w-3 h-3 bg-[#C7DCF9] rounded-full"></div>
-                    <div className="w-3 h-3 bg-[#C7DCF9] rounded-full"></div>
+                    <div className="w-3 h-3 bg-gradient-to-r from-[#430F00] to-[#863300] rounded-full"></div>
+                    <div className="w-3 h-3 bg-white/40 rounded-full"></div>
+                    <div className="w-3 h-3 bg-white/40 rounded-full"></div>
                   </div>
                 </div>
               </div>
@@ -218,13 +215,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </Card>
 
           {/* Call to Action Section */}
-          <Card className="mt-8 shadow-xl border-0 bg-gradient-to-r from-[#2C5DA9] to-[#0B0D3D] text-white">
+          <Card className="mt-8 shadow-xl border-0 bg-gradient-to-r from-[#430F00] via-[#863300] to-[#DE6300] text-white backdrop-blur-md">
             <CardContent className="p-8 text-center">
               <h3 className="text-2xl font-bold mb-4">Stay Updated with UAE Property Market</h3>
               <p className="mb-6 opacity-90">
                 Get the latest insights, market trends, and investment opportunities delivered to your inbox.
               </p>
-              <Button className="bg-white text-[#0B0D3D] hover:bg-[#C7DCF9] transition-all duration-300 px-8 py-3 rounded-xl shadow-lg hover:shadow-xl font-semibold">
+              <Button className="bg-white/20 backdrop-blur-md text-white border border-white/30 hover:bg-white hover:text-gray-900 transition-all duration-300 px-8 py-3 rounded-xl shadow-lg hover:shadow-xl font-semibold">
                 Subscribe to Newsletter
               </Button>
             </CardContent>
@@ -235,17 +232,21 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       {/* Custom Styles for Enhanced Typography */}
       <style jsx global>{`
         .prose h2 {
-          color: #0B0D3D;
+          color: #1f2937;
           font-size: 1.75rem;
           font-weight: 700;
           margin-top: 2.5rem;
           margin-bottom: 1.5rem;
           padding-bottom: 0.5rem;
-          border-bottom: 2px solid #C7DCF9;
+          border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+          background: linear-gradient(135deg, #430F00, #863300, #DE6300);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
         }
         
         .prose h3 {
-          color: #2C5DA9;
+          color: #374151;
           font-size: 1.5rem;
           font-weight: 600;
           margin-top: 2rem;
@@ -254,7 +255,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         
         .prose p {
           margin-bottom: 1.5rem;
-          color: #0B0D3D;
+          color: #1f2937;
           text-align: justify;
         }
         
@@ -264,7 +265,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         
         .prose li {
           margin-bottom: 0.75rem;
-          color: #0B0D3D;
+          color: #1f2937;
           position: relative;
           padding-left: 1.5rem;
         }
@@ -276,12 +277,15 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           top: 0.6rem;
           width: 6px;
           height: 6px;
-          background: linear-gradient(45deg, #2C5DA9, #0B0D3D);
+          background: linear-gradient(45deg, #430F00, #863300, #DE6300);
           border-radius: 50%;
         }
         
         .prose strong {
-          color: #0B0D3D;
+          background: linear-gradient(135deg, #430F00, #863300, #DE6300);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
           font-weight: 600;
         }
       `}</style>
