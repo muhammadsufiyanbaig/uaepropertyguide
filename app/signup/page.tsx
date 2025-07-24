@@ -50,22 +50,26 @@ export default function SignUpPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center py-12 px-4">
-      {/* Background decoration */}
+    <div className="min-h-screen flex items-center justify-center py-12 px-4 relative">
+      {/* Glassmorphism Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#DE6300]/20 via-[#863300]/10 to-[#430F00]/20"></div>
+      
+      {/* Background decoration with new colors */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#2C5DA9] rounded-full opacity-20 blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#2C5DA9] rounded-full opacity-20 blur-3xl"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-r from-[#DE6300] to-[#863300] rounded-full opacity-30 blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-r from-[#863300] to-[#430F00] rounded-full opacity-30 blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-[#430F00] to-[#DE6300] rounded-full opacity-20 blur-3xl"></div>
       </div>
       
-      <Card className="w-full max-w-md relative z-10 bg-white/95 backdrop-blur-sm border-0 shadow-2xl">
+      <Card className="w-full max-w-md relative z-10 backdrop-blur-xl bg-white/10 border border-white/20 shadow-2xl">
         <CardHeader className="space-y-2 text-center pb-6">
-          <div className="mx-auto w-16 h-16 bg-gradient-to-r from-[#0B0D3D] to-[#2C5DA9] rounded-full flex items-center justify-center mb-4">
+          <div className="mx-auto w-16 h-16 bg-gradient-to-r from-[#DE6300] via-[#863300] to-[#430F00] rounded-full flex items-center justify-center mb-4 shadow-lg">
             <User className="h-8 w-8 text-white" />
           </div>
-          <CardTitle className="text-3xl font-bold bg-gradient-to-r from-[#0B0D3D] to-[#2C5DA9] bg-clip-text text-transparent">
+          <CardTitle className="text-3xl font-bold bg-gradient-to-r from-[#DE6300] via-[#863300] to-[#430F00] bg-clip-text text-transparent">
             Create Account
           </CardTitle>
-          <CardDescription className="text-gray-600 text-lg">
+          <CardDescription className="text-gray-800 text-lg font-medium">
             Join UAE Property Guide today
           </CardDescription>
         </CardHeader>
@@ -73,9 +77,9 @@ export default function SignUpPage() {
         <CardContent className="space-y-6">
           <form onSubmit={handleSubmit} className="space-y-5">
             <div className="space-y-2">
-              <Label htmlFor="name" className="text-[#0B0D3D] font-medium">Full Name *</Label>
+              <Label htmlFor="name" className="text-gray-800 font-semibold">Full Name *</Label>
               <div className="relative group">
-                <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5 group-focus-within:text-[#2C5DA9] transition-colors" />
+                <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-600 h-5 w-5 group-focus-within:text-[#430F00] transition-colors" />
                 <Input
                   id="name"
                   name="name"
@@ -84,15 +88,15 @@ export default function SignUpPage() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="pl-10 h-12 border-2 border-gray-200 focus:border-[#2C5DA9] focus:ring-4 focus:ring-[#2C5DA9]/20 rounded-lg transition-all duration-200"
+                  className="pl-10 h-12 backdrop-blur-md bg-white/20 border-2 border-white/30 focus:border-[#DE6300] focus:ring-4 focus:ring-[#DE6300]/30 rounded-lg transition-all duration-200 text-gray-800 placeholder:text-gray-600"
                 />
               </div>
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="email" className="text-[#0B0D3D] font-medium">Email *</Label>
+              <Label htmlFor="email" className="text-gray-800 font-semibold">Email *</Label>
               <div className="relative group">
-                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5 group-focus-within:text-[#2C5DA9] transition-colors" />
+                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-600 h-5 w-5 group-focus-within:text-[#430F00] transition-colors" />
                 <Input
                   id="email"
                   name="email"
@@ -101,15 +105,15 @@ export default function SignUpPage() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="pl-10 h-12 border-2 border-gray-200 focus:border-[#2C5DA9] focus:ring-4 focus:ring-[#2C5DA9]/20 rounded-lg transition-all duration-200"
+                  className="pl-10 h-12 backdrop-blur-md bg-white/20 border-2 border-white/30 focus:border-[#DE6300] focus:ring-4 focus:ring-[#DE6300]/30 rounded-lg transition-all duration-200 text-gray-800 placeholder:text-gray-600"
                 />
               </div>
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="password" className="text-[#0B0D3D] font-medium">Password *</Label>
+              <Label htmlFor="password" className="text-gray-800 font-semibold">Password *</Label>
               <div className="relative group">
-                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5 group-focus-within:text-[#2C5DA9] transition-colors" />
+                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-600 h-5 w-5 group-focus-within:text-[#430F00] transition-colors" />
                 <Input
                   id="password"
                   name="password"
@@ -118,15 +122,15 @@ export default function SignUpPage() {
                   value={formData.password}
                   onChange={handleChange}
                   required
-                  className="pl-10 h-12 border-2 border-gray-200 focus:border-[#2C5DA9] focus:ring-4 focus:ring-[#2C5DA9]/20 rounded-lg transition-all duration-200"
+                  className="pl-10 h-12 backdrop-blur-md bg-white/20 border-2 border-white/30 focus:border-[#DE6300] focus:ring-4 focus:ring-[#DE6300]/30 rounded-lg transition-all duration-200 text-gray-800 placeholder:text-gray-600"
                 />
               </div>
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="confirmPassword" className="text-[#0B0D3D] font-medium">Confirm Password *</Label>
+              <Label htmlFor="confirmPassword" className="text-gray-800 font-semibold">Confirm Password *</Label>
               <div className="relative group">
-                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5 group-focus-within:text-[#2C5DA9] transition-colors" />
+                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-600 h-5 w-5 group-focus-within:text-[#430F00] transition-colors" />
                 <Input
                   id="confirmPassword"
                   name="confirmPassword"
@@ -135,15 +139,15 @@ export default function SignUpPage() {
                   value={formData.confirmPassword}
                   onChange={handleChange}
                   required
-                  className="pl-10 h-12 border-2 border-gray-200 focus:border-[#2C5DA9] focus:ring-4 focus:ring-[#2C5DA9]/20 rounded-lg transition-all duration-200"
+                  className="pl-10 h-12 backdrop-blur-md bg-white/20 border-2 border-white/30 focus:border-[#DE6300] focus:ring-4 focus:ring-[#DE6300]/30 rounded-lg transition-all duration-200 text-gray-800 placeholder:text-gray-600"
                 />
               </div>
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="phone" className="text-[#0B0D3D] font-medium">Phone Number (Optional)</Label>
+              <Label htmlFor="phone" className="text-gray-800 font-semibold">Phone Number (Optional)</Label>
               <div className="relative group">
-                <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5 group-focus-within:text-[#2C5DA9] transition-colors" />
+                <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-600 h-5 w-5 group-focus-within:text-[#430F00] transition-colors" />
                 <Input
                   id="phone"
                   name="phone"
@@ -151,13 +155,13 @@ export default function SignUpPage() {
                   placeholder="Enter your phone number"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="pl-10 h-12 border-2 border-gray-200 focus:border-[#2C5DA9] focus:ring-4 focus:ring-[#2C5DA9]/20 rounded-lg transition-all duration-200"
+                  className="pl-10 h-12 backdrop-blur-md bg-white/20 border-2 border-white/30 focus:border-[#DE6300] focus:ring-4 focus:ring-[#DE6300]/30 rounded-lg transition-all duration-200 text-gray-800 placeholder:text-gray-600"
                 />
               </div>
             </div>
 
             <div className="space-y-3">
-              <Label className="text-[#0B0D3D] font-medium">I am a</Label>
+              <Label className="text-gray-800 font-semibold">I am a</Label>
               <RadioGroup
                 value={formData.userType}
                 onValueChange={(value) => setFormData({ ...formData, userType: value })}
@@ -167,24 +171,24 @@ export default function SignUpPage() {
                   <RadioGroupItem 
                     value="customer" 
                     id="customer" 
-                    className="border-2 border-gray-300 text-[#2C5DA9] focus:ring-[#2C5DA9] focus:ring-offset-0"
+                    className="border-2 border-gray-600 text-[#430F00] focus:ring-[#DE6300] focus:ring-offset-0"
                   />
-                  <Label htmlFor="customer" className="text-[#0B0D3D] font-medium cursor-pointer">Customer</Label>
+                  <Label htmlFor="customer" className="text-gray-800 font-semibold cursor-pointer">Customer</Label>
                 </div>
                 <div className="flex items-center space-x-3">
                   <RadioGroupItem 
                     value="broker" 
                     id="broker" 
-                    className="border-2 border-gray-300 text-[#2C5DA9] focus:ring-[#2C5DA9] focus:ring-offset-0"
+                    className="border-2 border-gray-600 text-[#430F00] focus:ring-[#DE6300] focus:ring-offset-0"
                   />
-                  <Label htmlFor="broker" className="text-[#0B0D3D] font-medium cursor-pointer">Broker</Label>
+                  <Label htmlFor="broker" className="text-gray-800 font-semibold cursor-pointer">Broker</Label>
                 </div>
               </RadioGroup>
             </div>
 
             <Button 
               type="submit" 
-              className="w-full h-12 bg-gradient-to-r from-[#0B0D3D] to-[#2C5DA9] hover:from-[#0B0D3D]/90 hover:to-[#2C5DA9]/90 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
+              className="w-full h-12 bg-gradient-to-r from-[#DE6300] via-[#863300] to-[#430F00] hover:from-[#DE6300]/90 hover:via-[#863300]/90 hover:to-[#430F00]/90 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105 backdrop-blur-sm"
             >
               Create Account
             </Button>
@@ -192,10 +196,10 @@ export default function SignUpPage() {
 
           <div className="relative my-6">
             <div className="absolute inset-0 flex items-center">
-              <Separator className="w-full border-gray-300" />
+              <Separator className="w-full border-gray-600/50" />
             </div>
             <div className="relative flex justify-center text-sm uppercase">
-              <span className="bg-white px-4 text-gray-500 font-medium">Or sign up with</span>
+              <span className="backdrop-blur-sm bg-white/20 px-4 text-gray-800 font-semibold rounded-full">Or sign up with</span>
             </div>
           </div>
 
@@ -203,7 +207,7 @@ export default function SignUpPage() {
             <Button
               variant="outline"
               onClick={handleGoogleSignUp}
-              className="h-12 border-2 border-gray-200 hover:border-[#2C5DA9] hover:bg-[#2C5DA9]/5 bg-white text-gray-700 font-medium rounded-lg transition-all duration-200"
+              className="h-12 backdrop-blur-md bg-white/20 border-2 border-white/30 hover:border-[#DE6300] hover:bg-gradient-to-r hover:from-[#DE6300]/20 hover:to-[#863300]/20 text-gray-800 font-semibold rounded-lg transition-all duration-200 transform hover:scale-105"
             >
               <Chrome className="mr-2 h-5 w-5" />
               Google
@@ -211,7 +215,7 @@ export default function SignUpPage() {
             <Button
               variant="outline"
               onClick={handleFacebookSignUp}
-              className="h-12 border-2 border-gray-200 hover:border-[#2C5DA9] hover:bg-[#2C5DA9]/5 bg-white text-gray-700 font-medium rounded-lg transition-all duration-200"
+              className="h-12 backdrop-blur-md bg-white/20 border-2 border-white/30 hover:border-[#DE6300] hover:bg-gradient-to-r hover:from-[#DE6300]/20 hover:to-[#863300]/20 text-gray-800 font-semibold rounded-lg transition-all duration-200 transform hover:scale-105"
             >
               <Facebook className="mr-2 h-5 w-5" />
               Facebook
@@ -219,8 +223,8 @@ export default function SignUpPage() {
           </div>
 
           <div className="text-center text-sm pt-4">
-            <span className="text-gray-600">Already have an account? </span>
-            <Link href="/login" className="text-[#2C5DA9] hover:text-[#0B0D3D] font-semibold hover:underline transition-colors">
+            <span className="text-gray-700 font-medium">Already have an account? </span>
+            <Link href="/login" className="text-[#430F00] hover:text-[#DE6300] font-bold hover:underline transition-colors">
               Sign in
             </Link>
           </div>

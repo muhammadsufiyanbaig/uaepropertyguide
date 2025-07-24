@@ -90,94 +90,93 @@ export default function BlogPage() {
     }, [backgroundImages.length])
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 py-16">
-            <div className="container mx-auto px-4">
+        <div className="min-h-screen relative py-16">
+            {/* Glassmorphism Background */}
+            <div className="fixed inset-0 -z-30">
+                {backgroundImages.map((bg, index) => (
+                    <Image
+                        key={index}
+                        src={bg}
+                        alt={`Background ${index + 1}`}
+                        fill
+                        className={`object-cover transition-opacity duration-1000 ${
+                            index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                        }`}
+                    />
+                ))}
+                <div className="absolute inset-0 bg-white/30 backdrop-blur-sm"></div>
+            </div>
+
+            <div className="container mx-auto px-4 relative z-10">
                 {/* Hero Section */}
                 <div className="text-center mb-20 relative">
                     {/* Animated background elements */}
                     <div className="absolute inset-0 -z-20">
-                        <div className="absolute top-0 left-1/4 w-72 h-72 bg-gradient-to-br from-[#0B0D3D]/10 to-[#2C5DA9]/10 rounded-full blur-3xl animate-pulse"></div>
-                        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-tl from-[#2C5DA9]/8 to-[#0B0D3D]/2 rounded-full blur-3xl animate-pulse delay-1000"></div>
-                        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-blue-400/5 to-indigo-400/5 rounded-full blur-2xl animate-bounce delay-500"></div>
+                        <div className="absolute top-0 left-1/4 w-72 h-72 bg-gradient-to-br from-[#DE6300]/20 to-[#430F00]/20 rounded-full blur-3xl animate-pulse"></div>
+                        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-tl from-[#430F00]/15 to-[#863300]/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+                        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-[#DE6300]/10 to-[#863300]/10 rounded-full blur-2xl animate-bounce delay-500"></div>
                     </div>
 
                     {/* Main content container */}
                     <div className="relative">
-                        {/* Glassmorphism container with rotating background */}
-                        <div className="relative bg-white/20 backdrop-blur-xl rounded-3xl py-16 px-8 shadow-2xl border border-white/30 overflow-hidden">
-                            {/* Dynamic Background Images - positioned behind content */}
-                            <div className="absolute inset-0 -z-10 overflow-hidden rounded-3xl">
-                                {backgroundImages.map((bg, index) => (
-                                    <Image
-                                        key={index}
-                                        src={bg}
-                                        alt={`Background ${index + 1}`}
-                                        fill
-                                        className={`object-cover transition-opacity duration-1000 ${
-                                            index === currentImageIndex ? 'opacity-30' : 'opacity-0'
-                                        }`}
-                                    />
-                                ))}
-                                {/* Dark overlay for text readability */}
-                                <div className="absolute inset-0 bg-black/40"></div>
-                            </div>
-
+                        {/* Glassmorphism container */}
+                        <div className="relative bg-white/10 backdrop-blur-xl rounded-3xl py-16 px-8 shadow-2xl border border-white/20 overflow-hidden">
                             {/* Decorative geometric shapes */}
-                            <div className="absolute top-4 right-4 w-16 h-16 border-2 border-[#2C5DA9]/20 rounded-lg rotate-12 animate-spin-slow"></div>
-                            <div className="absolute bottom-4 left-4 w-12 h-12 bg-gradient-to-br from-[#0B0D3D]/10 to-[#2C5DA9]/10 rounded-full animate-bounce delay-300"></div>
-                            <div className="absolute top-1/2 right-8 w-8 h-8 bg-[#2C5DA9]/20 rounded-full animate-pulse delay-700"></div>
+                            <div className="absolute top-4 right-4 w-16 h-16 border-2 border-[#430F00]/30 rounded-lg rotate-12 animate-spin-slow"></div>
+                            <div className="absolute bottom-4 left-4 w-12 h-12 bg-gradient-to-br from-[#DE6300]/20 to-[#430F00]/20 rounded-full animate-bounce delay-300"></div>
+                            <div className="absolute top-1/2 right-8 w-8 h-8 bg-[#863300]/30 rounded-full animate-pulse delay-700"></div>
 
-                            {/* Content - positioned above background */}
+                            {/* Content */}
                             <div className="relative z-10">
                                 {/* Badge */}
-                                <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-[#0B0D3D] to-[#2C5DA9] text-white text-sm font-semibold mb-6 shadow-lg animate-fade-in">
+                                <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-[#DE6300] via-[#863300] to-[#430F00] text-white text-sm font-semibold mb-6 shadow-lg animate-fade-in backdrop-blur-sm">
                                     <span className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></span>
                                     Latest Property Insights
                                 </div>
 
                                 {/* Main heading */}
                                 <h1 className="text-6xl md:text-7xl font-black mb-6 leading-tight">
-                                    <span className="bg-gradient-to-r from-[#0B0D3D] via-[#2C5DA9] to-[#0B0D3D] bg-clip-text text-transparent bg-300% animate-gradient-x drop-shadow-lg">
+                                    <span className="bg-gradient-to-r from-[#DE6300] via-[#863300] to-[#430F00] bg-clip-text text-transparent bg-300% animate-gradient-x drop-shadow-lg">
                                         Property
                                     </span>
                                     <br />
-                                    <span className="bg-gradient-to-r from-[#2C5DA9] via-[#0B0D3D] to-[#2C5DA9] bg-clip-text text-transparent bg-300% animate-gradient-x delay-500 drop-shadow-lg">
+                                    <span className="bg-gradient-to-r from-[#430F00] via-[#863300] to-[#DE6300] bg-clip-text text-transparent bg-300% animate-gradient-x delay-500 drop-shadow-lg">
                                         Insights & News
                                     </span>
                                 </h1>
 
                                 {/* Subtitle */}
-                                <p className="text-xl md:text-2xl text-[#0B0D3D] max-w-4xl mx-auto leading-relaxed mb-8 font-medium drop-shadow-md">
+                                <p className="text-xl md:text-2xl text-gray-800 max-w-4xl mx-auto leading-relaxed mb-8 font-medium drop-shadow-md">
                                     Stay informed with the latest news, trends, and insights from the
-                                    <span className="text-[#2C5DA9] font-semibold"> UAE property market</span>
+                                    <span className="text-[#430F00] font-semibold"> UAE property market</span>
                                 </p>
 
-                                {/* Statistics or highlights */}
+                                {/* Statistics */}
                                 <div className="flex flex-wrap justify-center gap-8 mt-12">
                                     <div className="text-center">
-                                        <div className="text-3xl font-bold text-[#0B0D3D] mb-1 drop-shadow-lg">500+</div>
-                                        <div className="text-sm text-gray-600 font-medium drop-shadow-md">Articles Published</div>
+                                        <div className="text-3xl font-bold text-[#DE6300] mb-1 drop-shadow-lg">500+</div>
+                                        <div className="text-sm text-gray-700 font-medium drop-shadow-md">Articles Published</div>
                                     </div>
-                                    <div className="w-px h-16 bg-gradient-to-b from-transparent via-[#2C5DA9] to-transparent"></div>
+                                    <div className="w-px h-16 bg-gradient-to-b from-transparent via-[#863300] to-transparent"></div>
                                     <div className="text-center">
-                                        <div className="text-3xl font-bold text-[#2C5DA9] mb-1 drop-shadow-lg">1M+</div>
-                                        <div className="text-sm text-gray-600 font-medium drop-shadow-md">Readers Monthly</div>
+                                        <div className="text-3xl font-bold text-[#430F00] mb-1 drop-shadow-lg">1M+</div>
+                                        <div className="text-sm text-gray-700 font-medium drop-shadow-md">Readers Monthly</div>
                                     </div>
-                                    <div className="w-px h-16 bg-gradient-to-b from-transparent via-[#2C5DA9] to-transparent"></div>
+                                    <div className="w-px h-16 bg-gradient-to-b from-transparent via-[#863300] to-transparent"></div>
                                     <div className="text-center">
-                                        <div className="text-3xl font-bold text-[#0B0D3D] mb-1 drop-shadow-lg">24/7</div>
-                                        <div className="text-sm text-gray-600 font-medium drop-shadow-md">Market Updates</div>
+                                        <div className="text-3xl font-bold text-[#DE6300] mb-1 drop-shadow-lg">24/7</div>
+                                        <div className="text-sm text-gray-700 font-medium drop-shadow-md">Market Updates</div>
                                     </div>
                                 </div>
                             </div>
 
                             {/* Bottom gradient border */}
-                            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#0B0D3D] via-[#2C5DA9] to-[#0B0D3D]"></div>
+                            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#DE6300] via-[#863300] to-[#430F00]"></div>
                         </div>
 
                         {/* Floating elements */}
-                        <div className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-br from-[#2C5DA9] to-[#0B0D3D] rounded-full shadow-lg animate-bounce delay-1000"></div>
-                        <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-gradient-to-br from-[#0B0D3D] to-[#2C5DA9] rounded-full shadow-lg animate-pulse delay-1500"></div>
+                        <div className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-br from-[#430F00] to-[#DE6300] rounded-full shadow-lg animate-bounce delay-1000"></div>
+                        <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-gradient-to-br from-[#DE6300] to-[#863300] rounded-full shadow-lg animate-pulse delay-1500"></div>
                     </div>
                 </div>
 
@@ -186,7 +185,7 @@ export default function BlogPage() {
                     {blogPosts.map((post, index) => (
                         <Card
                             key={post.id}
-                            className="group hover:shadow-2xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm hover:bg-white/90 hover:-translate-y-2 overflow-hidden"
+                            className="group hover:shadow-2xl transition-all duration-500  bg-white/10 backdrop-blur-md hover:bg-white/20 hover:-translate-y-2 overflow-hidden border border-white/20"
                             style={{
                                 animationDelay: `${index * 150}ms`
                             }}
@@ -200,42 +199,38 @@ export default function BlogPage() {
                                     className="w-full h-52 object-cover group-hover:scale-110 transition-transform duration-700"
                                 />
                                 {/* Gradient Overlay */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#0B0D3D]/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#430F00]/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                                 {/* Category Badge */}
-                                <Badge className="absolute top-4 left-4 px-3 py-1 text-xs font-semibold text-white border-0 shadow-lg"
-                                    style={{ backgroundColor: '#2C5DA9' }}>
+                                <Badge className="absolute top-4 left-4 px-3 py-1 text-xs font-semibold text-white border-0 shadow-lg bg-gradient-to-r from-[#430F00] to-[#863300] backdrop-blur-sm">
                                     {post.category}
                                 </Badge>
                             </div>
 
                             <CardHeader className="pb-3">
-                                <div className="flex items-center text-sm text-gray-500 mb-3">
+                                <div className="flex items-center text-sm text-gray-700 mb-3">
                                     <div className="flex items-center">
-                                        <Calendar className="h-4 w-4 mr-2 text-[#2C5DA9]" />
+                                        <Calendar className="h-4 w-4 mr-2 text-[#430F00]" />
                                         <span>{new Date(post.date).toLocaleDateString()}</span>
                                     </div>
                                     <div className="flex items-center ml-4">
-                                        <Clock className="h-4 w-4 mr-2 text-[#2C5DA9]" />
+                                        <Clock className="h-4 w-4 mr-2 text-[#430F00]" />
                                         <span>{post.readTime}</span>
                                     </div>
                                 </div>
-                                <CardTitle className="text-xl font-bold text-[#0B0D3D] group-hover:text-[#2C5DA9] transition-colors duration-300 line-clamp-2">
+                                <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-[#430F00] transition-colors duration-300 line-clamp-2">
                                     {post.title}
                                 </CardTitle>
                             </CardHeader>
 
                             <CardContent className="pt-0">
-                                <CardDescription className="text-gray-600 mb-6 leading-relaxed line-clamp-3">
+                                <CardDescription className="text-gray-700 mb-6 leading-relaxed line-clamp-3">
                                     {post.excerpt}
                                 </CardDescription>
 
                                 <Link
                                     href={`/blog/${post.slug}`}
-                                    className="inline-flex items-center px-4 py-2 rounded-lg font-semibold text-white transition-all duration-300 group-hover:shadow-lg"
-                                    style={{
-                                        background: `linear-gradient(135deg, #0B0D3D 0%, #2C5DA9 100%)`,
-                                    }}
+                                    className="inline-flex items-center px-6 py-3 rounded-lg font-semibold text-white transition-all duration-300 group-hover:shadow-lg backdrop-blur-sm bg-gradient-to-r from-[#DE6300] via-[#863300] to-[#430F00] hover:from-[#430F00] hover:via-[#863300] hover:to-[#DE6300]"
                                 >
                                     Read More
                                     <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
@@ -246,8 +241,8 @@ export default function BlogPage() {
                 </div>
 
                 {/* Decorative Elements */}
-                <div className="fixed top-10 left-10 w-32 h-32 bg-gradient-to-br from-[#0B0D3D]/10 to-[#2C5DA9]/10 rounded-full blur-2xl -z-10"></div>
-                <div className="fixed bottom-10 right-10 w-40 h-40 bg-gradient-to-br from-[#2C5DA9]/10 to-[#0B0D3D]/10 rounded-full blur-2xl -z-10"></div>
+                <div className="fixed top-10 left-10 w-32 h-32 bg-gradient-to-br from-[#DE6300]/20 to-[#430F00]/20 rounded-full blur-2xl -z-10"></div>
+                <div className="fixed bottom-10 right-10 w-40 h-40 bg-gradient-to-br from-[#430F00]/20 to-[#863300]/20 rounded-full blur-2xl -z-10"></div>
             </div>
         </div>
     )

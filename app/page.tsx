@@ -59,16 +59,19 @@ const mockResults: Property[] = [
 
 export default function HomePage() {
   const [searchFilters, setSearchFilters] = useState({
+    cities: [] as string[],
     city: "",
     location: "",
     developer: "",
     unitType: "",
-    bedrooms: "",
+    bedrooms: [] as string[],
     handoverYear: "",
     minPrice: "",
     maxPrice: "",
     minSize: "",
     maxSize: "",
+    priceRange: "", // Changed from number[] to string
+    sizeRange: "",  // Changed from number[] to string
   });
   const [searchResults, setSearchResults] = useState<Property[]>([]);
   const [showResults, setShowResults] = useState(false);
