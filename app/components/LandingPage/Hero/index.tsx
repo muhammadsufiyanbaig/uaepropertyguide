@@ -87,7 +87,7 @@ const Hero: React.FC = () => {
       <section className="relative pt-4 lg:pt-8">
         <div className="container mx-auto px-4 lg:px-8 max-w-7xl">
           {/* Hero Content */}
-          <div className="text-center mb-8 lg:mb-12">
+          <div className="text-left sm:text-center mb-8 lg:mb-12">
             <h1 className="text-4xl md:text-3xl lg:text-6xl font-bold leading-tight">
               <span className="bg-gradient-to-r from-[#430F00] to-[#863300] bg-clip-text text-transparent drop-shadow-2xl">
                 Find Your Dream
@@ -97,7 +97,7 @@ const Hero: React.FC = () => {
                 Property in UAE
               </span>
             </h1>
-            <p className="text-lg md:text-lg lg:text-lg text-[#863300]/90 max-w-4xl mx-auto leading-relaxed mb-8 drop-shadow-lg">
+            <p className="text-lg md:text-lg lg:text-lg text-[#863300]/90 max-w-4xl sm:mx-auto leading-relaxed mb-8 drop-shadow-lg">
               Discover the finest properties across the Emirates with our comprehensive property guide
             </p>
           </div>
