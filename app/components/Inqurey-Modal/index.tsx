@@ -44,7 +44,7 @@ export default function InquiryModal({ isOpen, onClose, property }: InquiryModal
 
     return (
         <Dialog open={isOpen} onOpenChange={onClose}>
-            <DialogContent className="sm:max-w-[450px] max-h-[85vh] overflow-y-auto glass-strong bg-white/30 rounded-3xl border-0 shadow-2xl p-0">
+            <DialogContent className="sm:max-w-[450px] max-h-[85vh] overflow-y-auto glass-strong bg-white/40 rounded-3xl border-0 shadow-2xl p-0">
                 <div className="relative">
                     {/* Header with gradient background */}
                     <div className="bg-gradient-to-r from-[#430F00] to-[#863300] rounded-t-3xl p-6 text-white">

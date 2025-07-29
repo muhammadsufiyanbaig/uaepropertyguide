@@ -4,10 +4,11 @@ import bg1 from "@/public/bg1.jpg";
 import bg2 from "@/public/bg2.jpg";
 import bg3 from "@/public/bg3.jpg";
 import bg4 from "@/public/bg4.jpg";
+import bg5 from "@/public/bg5.jpg";
 
 const Hero: React.FC = () => {
   const [currentBgIndex, setCurrentBgIndex] = useState(0);
-  const backgroundImages = [bg1, bg2, bg3, bg4];
+  const backgroundImages = [bg5];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -25,7 +26,7 @@ const Hero: React.FC = () => {
           <div
             key={index}
             className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
-              index === currentBgIndex ? "opacity-50" : "opacity-0"
+              index === currentBgIndex ? "opacity-20" : "opacity-0"
             }`}
             style={{
               backgroundImage: `url(${bg.src})`,

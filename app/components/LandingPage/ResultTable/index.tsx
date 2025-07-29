@@ -42,7 +42,7 @@ const ResultsTable: React.FC<ResultsTableProps> = ({ searchResults, showResults,
           <p className="text-[#863300]/80 text-lg font-bold">Found {searchResults.length} properties matching your criteria</p>
         </div>
 
-        <div className="backdrop-blur-xl bg-white/30 border border-[#C7DCF9]/50 rounded-3xl shadow-2xl overflow-hidden">
+        <div className="backdrop-blur-xl bg-white/40 border border-[#C7DCF9]/50 rounded-3xl shadow-2xl overflow-hidden">
           <div className="overflow-x-auto">
             <Table>
               <TableHeader>

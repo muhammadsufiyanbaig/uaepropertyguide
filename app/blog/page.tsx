@@ -4,6 +4,7 @@ import bg1 from "@/public/bg1.jpg";
 import bg2 from "@/public/bg2.jpg";
 import bg3 from "@/public/bg3.jpg";
 import bg4 from "@/public/bg4.jpg";
+import bg5 from "@/public/bg5.jpg";
 import { useState, useEffect } from 'react'
 import Link from "next/link"
 import Image from "next/image"
@@ -79,7 +80,7 @@ const blogPosts = [
 
 export default function BlogPage() {
     const [currentImageIndex, setCurrentImageIndex] = useState(0)
-    const backgroundImages = [bg1, bg2, bg3, bg4]
+    const backgroundImages = [bg5]
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -104,7 +105,7 @@ export default function BlogPage() {
                         }`}
                     />
                 ))}
-                <div className="absolute inset-0 bg-white/30 backdrop-blur-sm"></div>
+                <div className="absolute inset-0 bg-white/40 backdrop-blur-sm"></div>
             </div>
 
             <div className="container mx-auto px-4 relative z-10">

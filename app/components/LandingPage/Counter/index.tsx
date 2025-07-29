@@ -18,7 +18,7 @@ const Counter = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center backdrop-blur-xl bg-white/20 border border-white/30 rounded-3xl p-8 hover:bg-white/30 hover:scale-105 transition-all duration-300 shadow-2xl group relative overflow-hidden">
+            <div className="text-center backdrop-blur-xl bg-white/20 border border-white/30 rounded-3xl p-8 hover:bg-white/40 hover:scale-105 transition-all duration-300 shadow-2xl group relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-3xl"></div>
               <div className="relative z-10">
                 <div className="w-20 h-20 bg-gradient-to-br from-[#430F00] to-[#DE6300] backdrop-blur-md rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-xl border border-white/30 group-hover:scale-110 transition-all duration-300">
@@ -31,7 +31,7 @@ const Counter = () => {
               </div>
             </div>
 
-            <div className="text-center backdrop-blur-xl bg-white/20 border border-white/30 rounded-3xl p-8 hover:bg-white/30 hover:scale-105 transition-all duration-300 shadow-2xl group relative overflow-hidden">
+            <div className="text-center backdrop-blur-xl bg-white/20 border border-white/30 rounded-3xl p-8 hover:bg-white/40 hover:scale-105 transition-all duration-300 shadow-2xl group relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-3xl"></div>
               <div className="relative z-10">
                 <div className="w-20 h-20 bg-gradient-to-br from-[#863300] to-[#DE6300] backdrop-blur-md rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-xl border border-white/30 group-hover:scale-110 transition-all duration-300">
@@ -44,7 +44,7 @@ const Counter = () => {
               </div>
             </div>
 
-            <div className="text-center backdrop-blur-xl bg-white/20 border border-white/30 rounded-3xl p-8 hover:bg-white/30 hover:scale-105 transition-all duration-300 shadow-2xl group relative overflow-hidden">
+            <div className="text-center backdrop-blur-xl bg-white/20 border border-white/30 rounded-3xl p-8 hover:bg-white/40 hover:scale-105 transition-all duration-300 shadow-2xl group relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-3xl"></div>
               <div className="relative z-10">
                 <div className="w-20 h-20 bg-gradient-to-br from-[#430F00] to-[#863300] backdrop-blur-md rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-xl border border-white/30 group-hover:scale-110 transition-all duration-300">
@@ -57,7 +57,7 @@ const Counter = () => {
               </div>
             </div>
 
-            <div className="text-center backdrop-blur-xl bg-white/20 border border-white/30 rounded-3xl p-8 hover:bg-white/30 hover:scale-105 transition-all duration-300 shadow-2xl group relative overflow-hidden">
+            <div className="text-center backdrop-blur-xl bg-white/20 border border-white/30 rounded-3xl p-8 hover:bg-white/40 hover:scale-105 transition-all duration-300 shadow-2xl group relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-3xl"></div>
               <div className="relative z-10">
                 <div className="w-20 h-20 bg-gradient-to-br from-[#DE6300] to-[#863300] backdrop-blur-md rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-xl border border-white/30 group-hover:scale-110 transition-all duration-300">

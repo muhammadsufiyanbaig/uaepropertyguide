@@ -137,7 +137,7 @@
   }
   
   .glass-card {
-    @apply bg-white/30 backdrop-blur-xl border-2 border-[#430F00]/25 shadow-2xl;
+    @apply bg-white/40 backdrop-blur-xl border-2 border-[#430F00]/25 shadow-2xl;
   }
   
   .glass-input {
