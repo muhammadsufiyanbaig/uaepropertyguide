@@ -13,12 +13,13 @@ import bg2 from "@/public/bg2.jpg"
 import bg3 from "@/public/bg3.jpg"
 import bg4 from "@/public/bg4.jpg"
 import bg5 from "@/public/bg5.jpg"
+import bg6 from "@/public/bg6.jpg"
 
 export default function ContactPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
   // Use .src for Vite compatibility; if using Next.js, this may not be needed
-  const backgroundImages = [bg5.src]
+  const backgroundImages = [bg6.src]
 
   useEffect(() => {
     const interval = setInterval(() => {

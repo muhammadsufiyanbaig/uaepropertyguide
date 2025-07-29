@@ -5,10 +5,11 @@ import bg2 from "@/public/bg2.jpg";
 import bg3 from "@/public/bg3.jpg";
 import bg4 from "@/public/bg4.jpg";
 import bg5 from "@/public/bg5.jpg";
+import bg6 from "@/public/bg5.jpg";
 
 const Hero: React.FC = () => {
   const [currentBgIndex, setCurrentBgIndex] = useState(0);
-  const backgroundImages = [bg5];
+  const backgroundImages = [bg6];
 
   useEffect(() => {
     const interval = setInterval(() => {
