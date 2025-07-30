@@ -32,7 +32,7 @@ export default function Header() {
                                     alt="UAE Property Guide Logo"
                                     width={100}
                                     height={100}
-                                    className="h-10 w-20 rounded-full object-cover"
+                                    className="h-10 w-full "
                                     onError={(e) => {
                                         // Fallback if logo doesn't exist
                                         e.currentTarget.style.display = 'none';
@@ -43,12 +43,6 @@ export default function Header() {
                                     }}
                                 />
                               </div>
-                        <div className="flex flex-col">
-                            <span className="text-xl font-bold bg-gradient-to-r from-[#430F00] to-[#DE6300] bg-clip-text text-transparent">
-                                UAE Property
-                            </span>
-                            <span className="text-sm font-medium text-[#430F00] -mt-1">Guide</span>
-                        </div>
                     </Link>
 
                     {/* Enhanced Desktop Navigation */}
